@@ -16,7 +16,7 @@ class LinkedList:
         result = "[" + str(self.head) + "]"
         return result
     
-    #get size
+    #check size
     def length(self):
         return self.size
 
@@ -75,6 +75,9 @@ class LinkedList:
         current_node.data = data
 
     #gets data and index
+    def get_front(self):
+        return self.head.data
+
     def contains(self, data):
         current_node = self.head
 
