@@ -16,7 +16,7 @@ class LinkedList:
         result = "[" + str(self.head) + "]"
         return result
     
-#get size
+    #get size
     def length(self):
         return self.size
 
@@ -25,7 +25,7 @@ class LinkedList:
             return True
         return False
 
-#insert nodes
+    #insert nodes
     def push_back(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -64,7 +64,7 @@ class LinkedList:
         
         self.size += 1
 
-#change node value
+    #change node value
     def set_at(self, index, data):
         if index < 0 or index >= self.size:
             raise IndexError("Index out of bounds")
@@ -74,11 +74,11 @@ class LinkedList:
             current_node = current_node.next
         current_node.data = data
 
-#gets
+    #gets data and index
     def contains(self, data):
         current_node = self.head
 
-        while current_node is not None:
+        while current_node:
             if current_node.data == data:
                 return True
             current_node = current_node.next
@@ -92,7 +92,15 @@ class LinkedList:
             current_node = current_node.next
         return current_node.data
 
-#delete nodes
+    def index_of(self, data):
+        current_node = self.head
+        for i in range(0, self.size):
+            if current_node.data == data:
+                return i
+            current_node = current_node.next
+        return -1
+
+    #delete nodes
     def delete_at(self, index):
         if index < 0 or index >= self.size:
             raise IndexError("Index out of bounds")
