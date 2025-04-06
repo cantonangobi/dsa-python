@@ -16,6 +16,10 @@ class LinkedList:
         result = "[" + str(self.head) + "]"
         return result
     
+#get size
+    def length(self):
+        return self.size
+
     def is_empty(self):
         if self.head is None:
             return True
@@ -61,7 +65,6 @@ class LinkedList:
         self.size += 1
 
 #change node value
-
     def set_at(self, index, data):
         if index < 0 or index >= self.size:
             raise IndexError("Index out of bounds")
@@ -70,7 +73,6 @@ class LinkedList:
         for i in range(0, index):
             current_node = current_node.next
         current_node.data = data
-
 
 #gets
     def contains(self, data):
